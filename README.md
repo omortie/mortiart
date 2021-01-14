@@ -5,5 +5,5 @@ This repository contains all of the works done by me in Processing (P5.js) for s
 Github Page is also enabled to explore the crafts online.
 
 ## List of Artifacts:
-* [Paint Lighter](https://omortie.github.io/mortiart/artifacts/paint-lighter/testProcessing.html)
+* [Paint Lighter](https://omortie.github.io/mortiart/artifacts/paintlighter/index.html)
 * [Snake Game](https://omortie.github.io/mortiart/artifacts/snakegame/index.html)

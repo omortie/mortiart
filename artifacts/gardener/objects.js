@@ -16,6 +16,8 @@ function Flower(x, y) {
     this.y = y;
     this.r = 8;
 
+    this.xDir = 5;
+
     this.show = function() {
         fill(150, 150, 20);
         ellipse(this.x, this.y, this.r * 2, this.r * 2);
@@ -23,6 +25,15 @@ function Flower(x, y) {
 
     this.grow = function() {
         this.r += 5;
+    }
+
+    this.move = function() {
+        this.x += this.xDir;
+    }
+
+    this.shiftDown = function() {
+        this.xDir *= -1;
+        this.y += 10;
     }
 }
 
@@ -32,12 +43,12 @@ function Drop(x, y) {
     this.r = 10;
 
     this.show = function() {
-        fill(50, 0, 250);
+        fill(0, 255, 255);
         ellipse(this.x, this.y, this.r * 2, this.r * 2);
     }
 
     this.move = function() {
-        this.y -= 5;
+        this.y -= 25;
     }
 
     this.hits = function(flower) {

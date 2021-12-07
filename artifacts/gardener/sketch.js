@@ -1,6 +1,7 @@
 var ship;
 var flowers = [];
 var drops = [];
+var gameIsOver = false;
 
 function setup() {
   createCanvas(700, 500);
@@ -13,18 +14,33 @@ function setup() {
 }
 
 function draw() {
-  background(51);
-  ship.show();
-  for (flower of flowers) {
-    flower.show();
-  }
-  for (drop of drops) {
-    drop.show();
-    drop.move();
+  if (gameIsOver) {
+    background(255, 0, 0);
+  } else {
+    background(51);
+    ship.show();
     for (flower of flowers) {
-      if (drop.hits(flower)) {
-        flower.grow();
-        drops.splice(drops.indexOf(drop), 1);
+      flower.show();
+      flower.move();
+
+      if (flower.x > width || flower.x < 0) {
+        for (flower of flowers) {
+          flower.shiftDown();
+          
+          if (flower.y == height) {
+            gameIsOver = true;
+          }
+        }
+      }
+    }
+    for (drop of drops) {
+      drop.show();
+      drop.move();
+      for (flower of flowers) {
+        if (drop.hits(flower)) {
+          flowers.splice(flowers.indexOf(flower), 1);
+          drops.splice(drops.indexOf(drop), 1);
+        }
       }
     }
   }

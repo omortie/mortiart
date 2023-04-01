@@ -3,7 +3,7 @@
 PImage img;
 
 void setup() {
-  size(639, 775);
+  size(589, 788);
   background(0);
   img = loadImage("data/cousinorange.png");
 }

@@ -1,11 +1,11 @@
-/* @pjs preload="data/cousinorange.png"; */
+/* @pjs preload="data/summer-flowers.jpg"; */
 
 PImage img;
 
 void setup() {
-  size(589, 788);
+  size(1200, 599);
   background(0);
-  img = loadImage("data/cousinorange.png");
+  img = loadImage("data/summer-flowers.jpg");
 }
 
 void draw() {
